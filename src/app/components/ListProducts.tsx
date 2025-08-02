@@ -60,7 +60,7 @@ function ListProducts() {
                             </div>
                             <h2 className='text-2xl font-bold'>{t.warehouseOverview}</h2>
                         </div>
-                        <button onClick={() => setIsOpen(true)} className='flex items-center justify-center font-semibold bg-[#D8E2F6] p-3 rounded-xl dark:bg-blue-500 hover:bg-blue-500 dark:hover:bg-[#D8E2F6] hover:text-black cursor-pointer mr-5'><Plus size={20} />{t.addNewProduct}</button>
+                        <button onClick={() => setIsOpen(true)} className='flex items-center justify-center font-semibold bg-[#D8E2F6] p-3 rounded-xl dark:bg-blue-500 hover:bg-blue-500 dark:hover:bg-[#D8E2F6] cursor-pointer mr-5'><Plus size={20} />{t.addNewProduct}</button>
                     </div>
                     {viewMode === 'grid' &&
                         <div className="container mx-auto lg:max-w-[66%]  grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 px-5 gap-7">
