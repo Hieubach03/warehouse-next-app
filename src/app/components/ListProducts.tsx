@@ -40,16 +40,14 @@ function ListProducts() {
         <div className='pb-20'>
             {filterProducts.length === 0 ? (
                 <>
-                    <div className='container mx-auto lg:max-w-[66%] flex items-center gap-x-3 py-5'>
+                    <div className='flex justify-between items-center container mx-auto lg:max-w-[66%] py-5 mb-5'>
                         <div className='flex items-center gap-x-3  ml-5'>
                             <div className='bg-[#D8E2F6] dark:bg-blue-900 p-3 rounded-2xl ml-5'>
                                 <Warehouse className=' text-blue-600 dark:text-white' size={30} />
                             </div>
                             <h2 className='text-2xl font-bold'>{t.warehouseOverview}</h2>
                         </div>
-                        <div className='flex'>
-                            <button className=' bg-blue-500 p-3 rounded-xl text-white hover:bg-blue-600 cursor-pointer mr-5'><Plus size={20} />{t.addNewProduct}</button>
-                        </div>
+                        <button onClick={() => setIsOpen(true)} className='flex items-center justify-center font-semibold bg-[#D8E2F6] p-3 rounded-xl dark:bg-blue-500 hover:bg-blue-500 dark:hover:bg-[#D8E2F6] hover:text-black cursor-pointer mr-5'><Plus size={20} />{t.addNewProduct}</button>
                     </div>
                     <p className='p-20 text-center text-2xl'>{t.noProduct}</p>
                 </>
@@ -62,7 +60,7 @@ function ListProducts() {
                             </div>
                             <h2 className='text-2xl font-bold'>{t.warehouseOverview}</h2>
                         </div>
-                        <button onClick={() => setIsOpen(true)} className='flex items-center justify-center font-semibold bg-[#D8E2F6] p-3 rounded-xl hover:bg-blue-500 cursor-pointer mr-5'><Plus size={20} />{t.addNewProduct}</button>
+                        <button onClick={() => setIsOpen(true)} className='flex items-center justify-center font-semibold bg-[#D8E2F6] p-3 rounded-xl dark:bg-blue-500 hover:bg-blue-500 dark:hover:bg-[#D8E2F6] hover:text-black cursor-pointer mr-5'><Plus size={20} />{t.addNewProduct}</button>
                     </div>
                     {viewMode === 'grid' &&
                         <div className="container mx-auto lg:max-w-[66%]  grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 px-5 gap-7">
