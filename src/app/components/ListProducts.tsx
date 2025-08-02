@@ -16,15 +16,15 @@ const translations = {
 
 
 function ListProducts() {
-    const products = useProductStore((state) => state.products);
+    // const products = useProductStore((state) => state.products);
     const toggleStock = useProductStore((state) => state.toggleStock);
     const deleteProduct = useProductStore((state) => state.deleteProduct);
 
     const getFilterProduct = useProductStore(state => state.getFilterProduct);
-    const searhText = useProductStore((state) => state.searchText);
-    const selectCategory = useProductStore(state => state.selectCategory);
-    const selectStatus = useProductStore(state => state.selectStatus);
-    const selectDays = useProductStore(state => state.selectDays);
+    // const searhText = useProductStore((state) => state.searchText);
+    // const selectCategory = useProductStore(state => state.selectCategory);
+    // const selectStatus = useProductStore(state => state.selectStatus);
+    // const selectDays = useProductStore(state => state.selectDays);
     const viewMode = useProductStore((state) => state.viewMode)
 
     const getProductbyId = useProductStore((state) => state.getProductbyId);

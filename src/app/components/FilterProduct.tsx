@@ -1,5 +1,5 @@
 "use client";
-import React, { useMemo } from "react";
+import React from "react";
 import { LayoutGrid, List, Filter } from "lucide-react";
 import useProductStore from "../store/ProductStore";
 import vi from '../type/vi.json'
@@ -29,7 +29,7 @@ function FilterProduct() {
         language,
     } = useProductStore();
 
-const filterProducts = getFilterProduct();
+    const filterProducts = getFilterProduct();
 
 
     const t = translations[language || "en"];
