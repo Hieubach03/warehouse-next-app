@@ -19,9 +19,9 @@ function CountQuantily() {
     const totalOutofStock = products.filter(product => !product.inStock).length
     const totalQuantity = products.reduce((sum, product) => sum + product.quantity, 0)
 
-    const { language, setLanguage } = useProductStore()
+    const { language } = useProductStore()
     const t = translations[language]
-    const { theme, setTheme } = useTheme();
+    // const { theme, setTheme } = useTheme();
 
 
     return (

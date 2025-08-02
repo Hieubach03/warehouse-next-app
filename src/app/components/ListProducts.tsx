@@ -32,7 +32,7 @@ function ListProducts() {
         return getFilterProduct();
     }, [getFilterProduct, searhText, selectCategory, selectStatus, selectDays, products]);
 
-    const { language, setLanguage } = useProductStore();
+    const { language } = useProductStore();
     const t = translations[language];
 
     const [isOpen, setIsOpen] = useState(false);

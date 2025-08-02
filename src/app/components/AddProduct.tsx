@@ -19,7 +19,7 @@ function AddProduct({ onClose }: { onClose: () => void }) {
     const [category, setCategory] = useState('');
     const [quantity, setQuantity] = useState<number>(1);
     const [description, setDescription] = useState('');
-    const { selectProduct } = useProductStore();
+    // const { selectProduct } = useProductStore();
 
     const [errors, setErros] = useState({
         name: '',
@@ -28,45 +28,45 @@ function AddProduct({ onClose }: { onClose: () => void }) {
         description: '',
     });
 
-    const { language, setLanguage } = useProductStore();
+    const { language } = useProductStore();
     const t = translations[language];
 
-    const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
+    // const handleSubmit = (e: React.FormEvent) => {
+    //     e.preventDefault();
 
-        const newErrors = {
-            name: name.trim() === '' ? t.productNameRequired : '',
-            category: category.trim() === '' ? t.categoryRequired : '',
-            quantity: quantity <= 0 ? t.quantityRequired : '',
-            description: description.trim() === '' ? t.descriptionRequired : '',
-        };
-        setErros(newErrors);
+    //     const newErrors = {
+    //         name: name.trim() === '' ? t.productNameRequired : '',
+    //         category: category.trim() === '' ? t.categoryRequired : '',
+    //         quantity: quantity <= 0 ? t.quantityRequired : '',
+    //         description: description.trim() === '' ? t.descriptionRequired : '',
+    //     };
+    //     setErros(newErrors);
 
-        const hasErrors = Object.values(newErrors).some(error => error !== '')
-        if (hasErrors) return;
+    //     const hasErrors = Object.values(newErrors).some(error => error !== '')
+    //     if (hasErrors) return;
 
-        addProduct({
-            id: crypto.randomUUID(),
-            name,
-            category,
-            quantity,
-            description,
-            inStock: true,
-            createdAt: new Date().toISOString().slice(0, 10),
-        });
-        onClose();
-        setName('');
-        setCategory('');
-        setQuantity(1);
-        setDescription('');
-        setErros({
-            name: '',
-            category: '',
-            quantity: '',
-            description: '',
-        });
-    };
-    const [isOpen, setIsOpen] = useState(false);
+    //     addProduct({
+    //         id: crypto.randomUUID(),
+    //         name,
+    //         category,
+    //         quantity,
+    //         description,
+    //         inStock: true,
+    //         createdAt: new Date().toISOString().slice(0, 10),
+    //     });
+    //     onClose();
+    //     setName('');
+    //     setCategory('');
+    //     setQuantity(1);
+    //     setDescription('');
+    //     setErros({
+    //         name: '',
+    //         category: '',
+    //         quantity: '',
+    //         description: '',
+    //     });
+    // };
+    // const [isOpen, setIsOpen] = useState(false);
 
     return (
         <form onSubmit={onClose} className="fixed inset-0 bg-[#1E1D1DC9] flex items-center justify-center z-50">

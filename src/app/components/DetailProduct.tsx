@@ -5,7 +5,6 @@ import { X, Tag, Package, Calendar, SquarePen, CircleX, Save } from 'lucide-reac
 import vi from '../type/vi.json'
 import en from '../type/en.json'
 import th from '../type/th.json'
-import { stat } from 'fs';
 
 const translations = {
     vi,
@@ -20,7 +19,7 @@ function DetailProduct() {
     const t = translations[language];
 
     const [isEdit, setIsEdit] = useState(false);
-    const [isOpen, setIsOpen] = useState(false);
+    const [,setIsOpen] = useState(false);
 
     const [editName, setEditName] = useState('');
     const [editCategory, setEditCategory] = useState('');

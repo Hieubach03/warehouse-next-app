@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect } from 'react'
+import React from 'react'
 import { Plus } from 'lucide-react'
 import useProductStore from '../store/ProductStore'
 import { useState } from 'react'
@@ -20,7 +20,7 @@ function AddForm() {
     const [category, setCategory] = useState('');
     const [quantity, setQuantity] = useState<number>(1);
     const [description, setDescription] = useState('');
-    const { selectProduct } = useProductStore();
+    // const { selectProduct } = useProductStore();
 
     const [errors, setErros] = useState({
         name: '',
@@ -29,7 +29,7 @@ function AddForm() {
         description: '',
     });
 
-    const { language, setLanguage } = useProductStore();
+    const { language } = useProductStore();
     const t = translations[language];
 
     const handleSubmit = (e: React.FormEvent) => {
@@ -67,18 +67,18 @@ function AddForm() {
         });
     };
 
-    const handleQuantityChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const value = e.target.value;
+    // const handleQuantityChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    //     const value = e.target.value;
 
-        if (value === "") {
-            setQuantity(0);
-        } else {
-            const numericValue = Number(value);
-            if (!isNaN(numericValue)) {
-                setQuantity(numericValue);
-            }
-        }
-    };
+    //     if (value === "") {
+    //         setQuantity(0);
+    //     } else {
+    //         const numericValue = Number(value);
+    //         if (!isNaN(numericValue)) {
+    //             setQuantity(numericValue);
+    //         }
+    //     }
+    // };
     return (
         <form onSubmit={handleSubmit} className='container mx-auto lg:max-w-[64%] bg-[#F8F8F8] dark:bg-[#1F2937] border-1 border-[#46505D] mt-10 p-7 rounded-2xl'>
             <div className='bg-white dark:bg-[#111827] border-3 border-[#E1E7EF] dark:border-[#46505D] p-10 rounded-2xl'>

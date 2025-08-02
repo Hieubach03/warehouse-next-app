@@ -58,7 +58,7 @@ function Header() {
                 <div className='hidden md:flex gap-x-4 justify-between items-center'>
                     <button className='dark:bg-[#1F2937] border-2 border-gray-200 dark:border-[#46505D] rounded-xl py-2 px-4 flex text-1xl font-semibold gap-x-2 hover:bg-blue-300 hover:text-black' onClick={handleLanguage}><Languages size={20} />{language.toUpperCase()}</button>
                     {mounted && (
-                        <button className='dark:bg-[#1F2937] border-2 border-gray-200 dark:border-[#46505D] rounded-xl p-2 font-semibold hover:bg-blue-300 hover:text-black' onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                        <button className='dark:bg-[#1F2937] border-2 border-gray-200 dark:border-[#46505D] rounded-xl p-2 font-semibold hover:bg-blue-300 hover:text-black transition-all duration-300' onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
                         >
                             {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
                         </button>
