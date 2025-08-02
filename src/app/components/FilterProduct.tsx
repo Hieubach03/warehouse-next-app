@@ -29,13 +29,8 @@ function FilterProduct() {
         language,
     } = useProductStore();
 
-    const filterProducts = useMemo(() => getFilterProduct(), [
-        products,
-        searchText,
-        selectCategory,
-        selectStatus,
-        selectDays,
-    ]);
+const filterProducts = getFilterProduct();
+
 
     const t = translations[language || "en"];
 

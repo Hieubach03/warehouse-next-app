@@ -14,14 +14,14 @@ const translations = {
 };
 
 function AddProduct({ onClose }: { onClose: () => void }) {
-    const addProduct = useProductStore((state) => state.addProduct);
+    // const addProduct = useProductStore((state) => state.addProduct);
     const [name, setName] = useState('');
     const [category, setCategory] = useState('');
     const [quantity, setQuantity] = useState<number>(1);
     const [description, setDescription] = useState('');
     // const { selectProduct } = useProductStore();
 
-    const [errors, setErros] = useState({
+    const [errors] = useState({
         name: '',
         category: '',
         quantity: '',

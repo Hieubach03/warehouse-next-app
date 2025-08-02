@@ -5,7 +5,7 @@ import useProductStore from '../store/ProductStore';
 import vi from '../type/vi.json'
 import en from '../type/en.json'
 import th from '../type/th.json'
-import { useTheme } from 'next-themes';
+// import { useTheme } from 'next-themes';
 
 const translations = {
     vi,

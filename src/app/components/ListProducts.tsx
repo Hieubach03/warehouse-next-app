@@ -28,9 +28,8 @@ function ListProducts() {
     const viewMode = useProductStore((state) => state.viewMode)
 
     const getProductbyId = useProductStore((state) => state.getProductbyId);
-    const filteredProducts = React.useMemo(() => {
-        return getFilterProduct();
-    }, [getFilterProduct, searhText, selectCategory, selectStatus, selectDays, products]);
+    const filterProducts = getFilterProduct();
+
 
     const { language } = useProductStore();
     const t = translations[language];
@@ -39,7 +38,7 @@ function ListProducts() {
 
     return (
         <div className='pb-20'>
-            {filteredProducts.length === 0 ? (
+            {filterProducts.length === 0 ? (
                 <>
                     <div className='container mx-auto lg:max-w-[66%] flex items-center gap-x-3 py-5'>
                         <div className='flex items-center gap-x-3  ml-5'>
@@ -67,7 +66,7 @@ function ListProducts() {
                     </div>
                     {viewMode === 'grid' &&
                         <div className="container mx-auto lg:max-w-[66%]  grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 px-5 gap-7">
-                            {filteredProducts.map((product) => (
+                            {filterProducts.map((product) => (
                                 <div key={product.id} className=" bg-white dark:bg-[#111827] border-2 border-gray-200 dark:border-[#46505D] p-8 rounded-2xl shadow-lg transition-transform duration-300 ease-in-out transform hover:scale-105">
                                     <div>
                                         <div className='flex items-center justify-between'>
@@ -116,7 +115,7 @@ function ListProducts() {
 
                     {viewMode === 'list' &&
                         <div className='container mx-auto lg:max-w-[65%]  flex flex-col gap-y-5 px-5'>
-                            {filteredProducts.map((product) => (
+                            {filterProducts.map((product) => (
                                 <div key={product.id} className='bg-white dark:bg-[#111827] border-2 border-gray-200 dark:border-[#46505D] p-8 rounded-2xl shadow-lg transition-transform duration-300 ease-in-out transform hover:scale-105'>
                                     <div className='flex items-center justify-between'>
                                         <p className='text-2xl font-bold'>{product.name}</p>
